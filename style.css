@@ -31,3 +31,27 @@
   color: #b8ffcf;
   margin-top: 15px;
 }
+.creator-card {
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.creator-card:hover {
+  transform: translateY(-5px);
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #2a2033;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.creator-card button {
+  margin-top: 12px;
+}
