@@ -73,7 +73,17 @@
 </section>
 
 <footer>© 2026 Private Lounge • 18+ • Privacy • Terms</footer>
-<script>
+<script>function demoLogin(event) {
+  event.preventDefault();
+  document.getElementById("login-message").textContent =
+    "Demo login submitted successfully.";
+}
+
+function demoSignup(event) {
+  event.preventDefault();
+  document.getElementById("signup-message").textContent =
+    "Demo account form submitted.";
+}
 const gate=document.getElementById('gate');
 document.getElementById('enter').onclick=()=>{gate.style.display='none';localStorage.setItem('adult_ok','1')};
 document.getElementById('leave').onclick=()=>{location.href='https://www.google.com/'};
