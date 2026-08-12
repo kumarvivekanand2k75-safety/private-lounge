@@ -4,7 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Private Lounge</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">.search-box {
+  max-width: 600px;
+  margin: 0 auto 35px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 15px 18px;
+  border: 1px solid #333342;
+  border-radius: 12px;
+  background: #15151e;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: #b86cff;
+}
 </head>
 <body>
 <div id="gate" class="gate">
@@ -95,6 +113,14 @@ const gate=document.getElementById('gate');
 document.getElementById('enter').onclick=()=>{gate.style.display='none';localStorage.setItem('adult_ok','1')};
 document.getElementById('leave').onclick=()=>{location.href='https://www.google.com/'};
 if(localStorage.getItem('adult_ok')==='1') gate.style.display='none';
-</script>
+function searchCategories() {
+  const query = document.getElementById("siteSearch").value.toLowerCase();
+  const cards = document.querySelectorAll("#categories .grid article");
+
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(query) ? "" : "none";
+  });
+}</script>
 </body>
 </html>
