@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Private Lounge — 18+</title>
 
   <style>
@@ -19,16 +18,16 @@
       color: #fff;
     }
 
-    /* AGE GATE */
+    /* 18+ AGE GATE */
     #ageGate {
       position: fixed;
       inset: 0;
-      background: rgba(5, 5, 8, 0.98);
+      background: #0b0b10;
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 9999;
       padding: 20px;
+      z-index: 9999;
     }
 
     .age-box {
@@ -45,7 +44,7 @@
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      background: #fff;
+      background: white;
       color: #111;
       display: flex;
       align-items: center;
@@ -78,13 +77,13 @@
     }
 
     .enter {
-      background: #fff;
+      background: white;
       color: #111;
     }
 
     .leave {
       background: #30303a;
-      color: #fff;
+      color: white;
     }
 
     /* HEADER */
@@ -112,11 +111,7 @@
     .hero {
       padding: 80px 20px;
       text-align: center;
-      background: linear-gradient(
-        135deg,
-        #171720,
-        #0b0b10
-      );
+      background: linear-gradient(135deg, #171720, #0b0b10);
     }
 
     .hero h1 {
@@ -136,7 +131,7 @@
       margin-top: 25px;
       padding: 13px 25px;
       border-radius: 10px;
-      background: #fff;
+      background: white;
       color: #111;
       text-decoration: none;
       font-weight: bold;
@@ -156,8 +151,7 @@
 
     .categories {
       display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 15px;
       margin-bottom: 60px;
     }
@@ -168,17 +162,11 @@
       padding: 25px;
       border-radius: 12px;
       text-align: center;
-      cursor: pointer;
-    }
-
-    .category:hover {
-      background: #22222c;
     }
 
     .creators {
       display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
     }
 
@@ -191,11 +179,7 @@
 
     .creator-image {
       height: 180px;
-      background: linear-gradient(
-        135deg,
-        #33333e,
-        #171720
-      );
+      background: linear-gradient(135deg, #33333e, #171720);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -215,7 +199,6 @@
       font-size: 14px;
     }
 
-    /* FOOTER */
     footer {
       border-top: 1px solid #292932;
       text-align: center;
@@ -230,9 +213,7 @@
       text-decoration: none;
     }
 
-    /* MOBILE */
     @media (max-width: 600px) {
-
       header {
         flex-direction: column;
         gap: 15px;
@@ -256,14 +237,12 @@
 
 <body>
 
-  <!-- 18+ AGE VERIFICATION -->
+  <!-- AGE VERIFICATION -->
   <div id="ageGate">
 
     <div class="age-box">
 
-      <div class="age-circle">
-        18+
-      </div>
+      <div class="age-circle">18+</div>
 
       <h1>Private Lounge</h1>
 
@@ -288,14 +267,10 @@
 
   </div>
 
-
-  <!-- WEBSITE -->
-
+  <!-- HEADER -->
   <header>
 
-    <div class="logo">
-      🔞 Private Lounge
-    </div>
+    <div class="logo">🔞 Private Lounge</div>
 
     <nav>
       <a href="#home">Home</a>
@@ -305,7 +280,7 @@
 
   </header>
 
-
+  <!-- HERO -->
   <section class="hero" id="home">
 
     <h1>Welcome to Private Lounge</h1>
@@ -321,48 +296,34 @@
 
   </section>
 
-
+  <!-- MAIN CONTENT -->
   <main class="container">
 
     <section id="categories">
 
-      <h2 class="section-title">
-        Categories
-      </h2>
+      <h2 class="section-title">Categories</h2>
 
       <div class="categories">
 
-        <div class="category">
-          🎬 Videos
-        </div>
+        <div class="category">🎬 Videos</div>
 
-        <div class="category">
-          📸 Photos
-        </div>
+        <div class="category">📸 Photos</div>
 
-        <div class="category">
-          ⭐ Creators
-        </div>
+        <div class="category">⭐ Creators</div>
 
-        <div class="category">
-          🔥 Trending
-        </div>
+        <div class="category">🔥 Trending</div>
 
       </div>
 
     </section>
 
-
     <section id="creators">
 
-      <h2 class="section-title">
-        Featured Creators
-      </h2>
+      <h2 class="section-title">Featured Creators</h2>
 
       <div class="creators">
 
         <div class="creator">
-
           <div class="creator-image">
             Creator Image
           </div>
@@ -371,12 +332,9 @@
             <h3>Creator One</h3>
             <p>Adult creator profile</p>
           </div>
-
         </div>
 
-
         <div class="creator">
-
           <div class="creator-image">
             Creator Image
           </div>
@@ -385,12 +343,9 @@
             <h3>Creator Two</h3>
             <p>Adult creator profile</p>
           </div>
-
         </div>
 
-
         <div class="creator">
-
           <div class="creator-image">
             Creator Image
           </div>
@@ -399,7 +354,6 @@
             <h3>Creator Three</h3>
             <p>Adult creator profile</p>
           </div>
-
         </div>
 
       </div>
@@ -408,12 +362,10 @@
 
   </main>
 
-
+  <!-- FOOTER -->
   <footer>
 
-    <p>
-      © 2026 Private Lounge
-    </p>
+    <p>© 2026 Private Lounge</p>
 
     <br>
 
@@ -423,7 +375,6 @@
     <a href="#">Contact</a>
 
   </footer>
-
 
   <script>
 
