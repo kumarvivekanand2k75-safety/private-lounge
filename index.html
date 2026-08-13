@@ -339,6 +339,19 @@ document.getElementById("logoutButton").addEventListener("click", async function
 });
 
 </script>
+<script>
+const gate = document.getElementById("gate");
 
+if (localStorage.getItem("adult_ok") === "1") {
+  gate.style.display = "none";
+}
+
+document.getElementById("leave").onclick = function () {
+  window.location.href = "https://www.google.com/";
+};
+</script>
+
+</body>
+</html>
 </body>
 </html>
