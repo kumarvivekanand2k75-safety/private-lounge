@@ -8,12 +8,17 @@
 
 <link rel="stylesheet" href="style.css">
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-</head>
-
+<script>
+if (localStorage.getItem("adult_ok") === "1") {
+  document.getElementById("gate").style.display = "none";
+}
+</script>
 <body>
 
 <!-- 18+ AGE GATE -->
+
+
+    <h1>Private Lounge</h1>
 <div id="gate" class="gate">
   <div class="card">
 
@@ -21,27 +26,22 @@
 
     <h1>Private Lounge</h1>
 
-    <p>
-      This website is intended for adults 18 and over.
-    </p>
+    <p>This website is intended for adults 18 and over.</p>
 
     <button
-      id="enter"
       type="button"
-      onclick="enterSite()">
+      onclick="document.getElementById('gate').style.display='none'; localStorage.setItem('adult_ok','1');">
       I am 18+ — Enter
     </button>
 
     <button
-      id="leave"
+      type="button"
       class="secondary"
-      type="button">
+      onclick="window.location.href='https://www.google.com/';">
       Leave
     </button>
 
-    <small>
-      Demo website • No explicit content included
-    </small>
+    <small>Demo website • No explicit content included</small>
 
   </div>
 </div>
