@@ -9,17 +9,26 @@
 
 <body>
 
+<!-- 18+ AGE GATE -->
 <div id="gate" class="gate">
   <div class="card">
     <div class="badge">18+</div>
     <h1>Private Lounge</h1>
     <p>This website is intended for adults 18 and over.</p>
-    <button id="enter">I am 18+ — Enter</button>
-    <button id="leave" class="secondary">Leave</button>
+
+    <button id="enter" type="button">
+      I am 18+ — Enter
+    </button>
+
+    <button id="leave" class="secondary" type="button">
+      Leave
+    </button>
+
     <small>Demo website • No explicit content included</small>
   </div>
 </div>
 
+<!-- HEADER -->
 <header>
   <div class="logo">PRIVATE<span>LOUNGE</span></div>
 
@@ -34,19 +43,25 @@
 
 <main id="home">
 
+<!-- HERO -->
 <section class="hero">
   <div>
     <p class="eyebrow">18+ COMMUNITY</p>
+
     <h2>Private. Modern. Discreet.</h2>
+
     <p>
       A clean adult-oriented landing page template.
       Add your own lawful, consensual content and policies.
     </p>
+
     <a class="cta" href="#categories">Explore</a>
   </div>
 </section>
 
+<!-- CATEGORIES -->
 <section id="categories" class="section">
+
   <h2>Categories</h2>
 
   <div class="search-box">
@@ -54,7 +69,6 @@
       type="search"
       id="siteSearch"
       placeholder="Search categories..."
-      oninput="searchCategories()"
     >
   </div>
 
@@ -64,26 +78,33 @@
       <div class="avatar">C</div>
       <h3>Creator One</h3>
       <p>Verified creator profile</p>
-      <a class="profile-btn" href="#creator-one">View Profile</a>
+      <a class="profile-btn" href="#creator-one">
+        View Profile
+      </a>
     </article>
 
     <article class="creator-card">
       <div class="avatar">A</div>
       <h3>Creator Two</h3>
       <p>Verified creator profile</p>
-      <a class="profile-btn" href="#creator-two">View Profile</a>
+      <a class="profile-btn" href="#creator-two">
+        View Profile
+      </a>
     </article>
 
     <article class="creator-card">
       <div class="avatar">M</div>
       <h3>Creator Three</h3>
       <p>Verified creator profile</p>
-      <a class="profile-btn" href="#creator-three">View Profile</a>
+      <a class="profile-btn" href="#creator-three">
+        View Profile
+      </a>
     </article>
 
   </div>
 </section>
 
+<!-- PROFILES -->
 <section id="creator-one" class="section profile">
   <h2>Creator One</h2>
   <p>Verified creator profile.</p>
@@ -99,19 +120,24 @@
   <p>Verified creator profile.</p>
 </section>
 
+<!-- ABOUT -->
 <section id="about" class="section about">
   <h2>About</h2>
+
   <p>
     This starter site is designed for lawful adult services.
-    Add age verification, privacy, terms, reporting and consent policies
-    before publishing real user content.
+    Add age verification, privacy, terms, reporting and consent
+    policies before publishing real user content.
   </p>
 </section>
 
+<!-- LOGIN -->
 <section id="login" class="section">
+
   <h2>Member Login</h2>
 
   <form id="loginForm" class="login-form">
+
     <input
       type="email"
       id="loginEmail"
@@ -126,22 +152,38 @@
       required
     >
 
-    <button type="submit">Login</button>
+    <button type="submit">
+      Login
+    </button>
+
   </form>
 
   <div id="userPanel" style="display:none;">
+
     <h3>Welcome!</h3>
-    <p>User ID: <strong id="userId"></strong></p>
-    <button type="button" onclick="logout()">Logout</button>
+
+    <p>
+      Demo User ID:
+      <strong id="userId"></strong>
+    </p>
+
+    <button type="button" id="logoutButton">
+      Logout
+    </button>
+
   </div>
 
   <p id="login-message"></p>
+
 </section>
 
+<!-- SIGN UP -->
 <section id="signup" class="section">
+
   <h2>Create Account</h2>
 
   <form id="signupForm" class="login-form">
+
     <input
       type="text"
       id="signupName"
@@ -163,120 +205,146 @@
       required
     >
 
-    <button type="submit">Sign Up</button>
+    <button type="submit">
+      Sign Up
+    </button>
+
   </form>
 
   <p id="signup-message"></p>
+
 </section>
 
 </main>
 
+<!-- FOOTER -->
 <footer>
   © 2026 Private Lounge • 18+ • Privacy • Terms
 </footer>
 
+
 <script>
 
+/* =========================
+   18+ AGE VERIFICATION
+========================= */
+
 const gate = document.getElementById("gate");
-
-document.getElementById("enter").onclick = function() {
-  gate.style.display = "none";
-  localStorage.setItem("adult_ok", "1");
-};
-
-document.getElementById("leave").onclick = function() {
-  location.href = "https://www.google.com/";
-};
+const enterButton = document.getElementById("enter");
+const leaveButton = document.getElementById("leave");
 
 if (localStorage.getItem("adult_ok") === "1") {
   gate.style.display = "none";
 }
 
+enterButton.addEventListener("click", function () {
+  localStorage.setItem("adult_ok", "1");
+  gate.style.display = "none";
+});
 
-function searchCategories() {
+leaveButton.addEventListener("click", function () {
+  window.location.href = "https://www.google.com/";
+});
 
-  const query =
-    document.getElementById("siteSearch").value.toLowerCase();
 
-  const cards =
-    document.querySelectorAll("#categories .grid article");
+/* =========================
+   SEARCH
+========================= */
 
-  cards.forEach(function(card) {
+const searchInput = document.getElementById("siteSearch");
+
+searchInput.addEventListener("input", function () {
+
+  const query = searchInput.value.toLowerCase();
+
+  const cards = document.querySelectorAll(
+    "#categories .grid article"
+  );
+
+  cards.forEach(function (card) {
 
     const text = card.textContent.toLowerCase();
 
-    card.style.display =
-      text.includes(query) ? "" : "none";
+    if (text.includes(query)) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
 
   });
-}
-
-
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-
-  event.preventDefault();
-
-  const email =
-    document.getElementById("loginEmail").value;
-
-  const userId =
-    "USER-" + Math.floor(100000 + Math.random() * 900000);
-
-  document.getElementById("loginForm").style.display = "none";
-
-  document.getElementById("userPanel").style.display = "block";
-
-  document.getElementById("userId").textContent = userId;
-
 
 });
 
 
-function logout() {
+/* =========================
+   DEMO LOGIN
+========================= */
 
-  document.getElementById("loginForm").style.display = "grid";
+const loginForm = document.getElementById("loginForm");
+const userPanel = document.getElementById("userPanel");
+const userIdElement = document.getElementById("userId");
+const loginMessage = document.getElementById("login-message");
+const logoutButton = document.getElementById("logoutButton");
 
-  document.getElementById("userPanel").style.display = "none";
+loginForm.addEventListener("submit", function (event) {
+
+  event.preventDefault();
+
+  const userId =
+    "USER-" +
+    Math.floor(100000 + Math.random() * 900000);
+
+  loginForm.style.display = "none";
+
+  userPanel.style.display = "block";
+
+  userIdElement.textContent = userId;
+
+  loginMessage.textContent =
+    "Demo login successful.";
+
+});
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+logoutButton.addEventListener("click", function () {
+
+  loginForm.style.display = "grid";
+
+  userPanel.style.display = "none";
 
   document.getElementById("loginEmail").value = "";
 
   document.getElementById("loginPassword").value = "";
 
-  document.getElementById("login-message").textContent = "";
+  loginMessage.textContent = "";
 
-}
+});
 
 
-document.getElementById("signupForm").addEventListener("submit", function(event) {
+/* =========================
+   DEMO SIGN UP
+========================= */
+
+const signupForm =
+  document.getElementById("signupForm");
+
+const signupMessage =
+  document.getElementById("signup-message");
+
+signupForm.addEventListener("submit", function (event) {
 
   event.preventDefault();
 
-  document.getElementById("signup-message").textContent =
-    
-<script>
-const gate = document.getElementById("gate");
+  signupMessage.textContent =
+    "Demo account created successfully.";
 
-document.getElementById("enter").addEventListener("click", function () {
-  gate.style.display = "none";
-  localStorage.setItem("adult_ok", "1");
 });
 
-document.getElementById("leave").addEventListener("click", function () {
-  window.location.href = "https://www.google.com/";
-});
-
-if (localStorage.getItem("adult_ok") === "1") {
-  gate.style.display = "none";
-}
-
-function searchCategories() {
-  const query = document.getElementById("siteSearch").value.toLowerCase();
-
-  document.querySelectorAll("#categories .grid article").forEach(function(card) {
-    card.style.display =
-      card.textContent.toLowerCase().includes(query) ? "" : "none";
-  });
-}
 </script>
+
 </body>
 </html>
