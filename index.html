@@ -1,698 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Private Lounge</title>
+  <title>Private Lounge</title>
 
-<link rel="stylesheet" href="style.css">
-
-<script>
-if (localStorage.getItem("adult_ok") === "1") {
-  document.getElementById("gate").style.display = "none";
-}
-</script>
-<body>
-
-<!-- 18+ AGE GATE -->
-
-
-    <h1>Private Lounge</h1>
-<div id="gate" class="gate">
-  <div class="card">
-
-    <div class="badge">18+</div>
-
-    <h1>Private Lounge</h1>
-
-    <p>This website is intended for adults 18 and over.</p>
-
-    <button
-      type="button"
-      onclick="document.getElementById('gate').style.display='none'; localStorage.setItem('adult_ok','1');">
-      I am 18+ — Enter
-    </button>
-
-    <button
-      type="button"
-      class="secondary"
-      onclick="window.location.href='https://www.google.com/';">
-      Leave
-    </button>
-
-    <small>Demo website • No explicit content included</small>
-
-  </div>
-</div>
-
-
-<!-- HEADER -->
-<header>
-
-  <div class="logo">
-    PRIVATE<span>LOUNGE</span>
-  </div>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#categories">Categories</a>
-    <a href="#about">About</a>
-    <a href="#login">Login</a>
-    <a href="#signup">Sign Up</a>
-  </nav>
-
-</header>
-
-
-<main id="home">
-
-
-<!-- HERO -->
-<section class="hero">
-
-  <div>
-
-    <p class="eyebrow">
-      18+ COMMUNITY
-    </p>
-
-    <h2>
-      Private. Modern. Discreet.
-    </h2>
-
-    <p>
-      A clean adult-oriented landing page template.
-      Add your own lawful, consensual content and policies.
-    </p>
-
-    <a class="cta" href="#categories">
-      Explore
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- CATEGORIES -->
-<section id="categories" class="section">
-
-  <h2>Categories</h2>
-
-  <div class="search-box">
-
-    <input
-      type="search"
-      id="siteSearch"
-      placeholder="Search categories..."
-    >
-
-  </div>
-
-
-  <div class="grid">
-
-
-    <article class="creator-card">
-
-      <div class="avatar">C</div>
-
-      <h3>Creator One</h3>
-
-      <p>
-        Verified creator profile
-      </p>
-
-      <a
-        class="profile-btn"
-        href="#creator-one">
-        View Profile
-      </a>
-
-    </article>
-
-
-    <article class="creator-card">
-
-      <div class="avatar">A</div>
-
-      <h3>Creator Two</h3>
-
-      <p>
-        Verified creator profile
-      </p>
-
-      <a
-        class="profile-btn"
-        href="#creator-two">
-        View Profile
-      </a>
-
-    </article>
-
-
-    <article class="creator-card">
-
-      <div class="avatar">M</div>
-
-      <h3>Creator Three</h3>
-
-      <p>
-        Verified creator profile
-      </p>
-
-      <a
-        class="profile-btn"
-        href="#creator-three">
-        View Profile
-      </a>
-
-    </article>
-
-
-  </div>
-
-</section>
-
-
-<!-- CREATOR PROFILES -->
-
-<section
-  id="creator-one"
-  class="section profile">
-
-  <h2>Creator One</h2>
-
-  <p>
-    Verified creator profile.
-  </p>
-
-</section>
-
-
-<section
-  id="creator-two"
-  class="section profile">
-
-  <h2>Creator Two</h2>
-
-  <p>
-    Verified creator profile.
-  </p>
-
-</section>
-
-
-<section
-  id="creator-three"
-  class="section profile">
-
-  <h2>Creator Three</h2>
-
-  <p>
-    Verified creator profile.
-  </p>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section
-  id="about"
-  class="section about">
-
-  <h2>About</h2>
-
-  <p>
-    This starter site is designed for lawful adult services.
-    Add age verification, privacy, terms, reporting and consent
-    policies before publishing real user content.
-  </p>
-
-</section>
-
-
-<!-- LOGIN -->
-
-<section
-  id="login"
-  class="section">
-
-  <h2>
-    Member Login
-  </h2>
-
-
-  <form
-    id="loginForm"
-    class="login-form">
-
-
-    <input
-      type="email"
-      id="loginEmail"
-      placeholder="Email address"
-      required
-    >
-
-
-    <input
-      type="password"
-      id="loginPassword"
-      placeholder="Password"
-      required
-    >
-
-
-    <button type="submit">
-      Login
-    </button>
-
-
-  </form>
-
-
-  <div
-    id="userPanel"
-    style="display:none;">
-
-    <h3>
-      Welcome!
-    </h3>
-
-    <p>
-      User ID:
-      <strong id="userId"></strong>
-    </p>
-
-    <button
-      type="button"
-      id="logoutButton">
-      Logout
-    </button>
-
-  </div>
-
-
-  <p id="login-message"></p>
-
-</section>
-
-
-<!-- SIGN UP -->
-
-<section
-  id="signup"
-  class="section">
-
-  <h2>
-    Create Account
-  </h2>
-
-
-  <form
-    id="signupForm"
-    class="login-form">
-
-
-    <input
-      type="text"
-      id="signupName"
-      placeholder="Your name"
-      required
-    >
-
-
-    <input
-      type="email"
-      id="signupEmail"
-      placeholder="Email address"
-      required
-    >
-
-
-    <input
-      type="password"
-      id="signupPassword"
-      placeholder="Create password"
-      required
-    >
-
-
-    <button type="submit">
-      Sign Up
-    </button>
-
-
-  </form>
-
-
-  <p id="signup-message"></p>
-
-</section>
-
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-  © 2026 Private Lounge •
-  18+ • Privacy • Terms
-
-</footer>
-
-
-
-<script>
-
-/* =========================
-   SUPABASE
-========================= */
-
-/*
-  IMPORTANT:
-  Replace the two values below
-  with your own Supabase values.
-*/
-
-const SUPABASE_URL =
-  "qghuuwyadekmglxyywyf";
-
-const SUPABASE_KEY =
-  "sb_publishable_9pMaBoqDzN2Fq8fTGwC5jA_lKZ046kC";
-
-
-const supabaseClient =
-  supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-  );
-
-
-
-/* =========================
-   18+ AGE VERIFICATION
-========================= */
-
-function enterSite() {
-
-  const gate =
-    document.getElementById("gate");
-
-  gate.style.display = "none";
-
-  localStorage.setItem(
-    "adult_ok",
-    "1"
-  );
-
-}
-
-
-const gate =
-  document.getElementById("gate");
-
-
-if (
-  localStorage.getItem("adult_ok") === "1"
-) {
-
-  gate.style.display = "none";
-
-}
-
-
-document
-  .getElementById("leave")
-  .addEventListener(
-    "click",
-    function () {
-
-      window.location.href =
-        "https://www.google.com/";
-
-    }
-  );
-
-
-
-/* =========================
-   SEARCH
-========================= */
-
-document
-  .getElementById("siteSearch")
-  .addEventListener(
-    "input",
-    function () {
-
-      const query =
-        this.value.toLowerCase();
-
-
-      const cards =
-        document.querySelectorAll(
-          "#categories .grid article"
-        );
-
-
-      cards.forEach(
-        function (card) {
-
-          const text =
-            card.textContent
-              .toLowerCase();
-
-
-          if (
-            text.includes(query)
-          ) {
-
-            card.style.display = "";
-
-          } else {
-
-            card.style.display = "none";
-
-          }
-
-        }
-      );
-
-    }
-  );
-
-
-
-/* =========================
-   REAL LOGIN
-========================= */
-
-document
-  .getElementById("loginForm")
-  .addEventListener(
-    "submit",
-    async function (event) {
-
-      event.preventDefault();
-
-
-      const email =
-        document.getElementById(
-          "loginEmail"
-        ).value;
-
-
-      const password =
-        document.getElementById(
-          "loginPassword"
-        ).value;
-
-
-      const {
-        data,
-        error
-      } =
-        await supabaseClient.auth
-          .signInWithPassword({
-
-            email: email,
-
-            password: password
-
-          });
-
-
-      if (error) {
-
-        document.getElementById(
-          "login-message"
-        ).textContent =
-          error.message;
-
-        return;
-
-      }
-
-
-      document.getElementById(
-        "login-message"
-      ).textContent =
-        "Login successful!";
-
-
-      document.getElementById(
-        "userId"
-      ).textContent =
-        data.user.id;
-
-
-      document.getElementById(
-        "loginForm"
-      ).style.display =
-        "none";
-
-
-      document.getElementById(
-        "userPanel"
-      ).style.display =
-        "block";
-
-    }
-  );
-
-
-
-/* =========================
-   REAL SIGN UP
-========================= */
-
-document
-  .getElementById("signupForm")
-  .addEventListener(
-    "submit",
-    async function (event) {
-
-      event.preventDefault();
-
-
-      const name =
-        document.getElementById(
-          "signupName"
-        ).value;
-
-
-      const email =
-        document.getElementById(
-          "signupEmail"
-        ).value;
-
-
-      const password =
-        document.getElementById(
-          "signupPassword"
-        ).value;
-
-
-      const {
-        error
-      } =
-        await supabaseClient.auth
-          .signUp({
-
-            email: email,
-
-            password: password,
-
-            options: {
-
-              data: {
-
-                name: name
-
-              }
-
-            }
-
-          });
-
-
-      if (error) {
-
-        document.getElementById(
-          "signup-message"
-        ).textContent =
-          error.message;
-
-        return;
-
-      }
-
-
-      document.getElementById(
-        "signup-message"
-      ).textContent =
-        "Account created! Please verify your email.";
-
-    }
-  );
-
-
-
-/* =========================
-   LOGOUT
-========================= */
-
-document
-  .getElementById("logoutButton")
-  .addEventListener(
-    "click",
-    async function () {
-
-
-      await supabaseClient.auth
-        .signOut();
-
-
-      document.getElementById(
-        "loginForm"
-      ).style.dis<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Private Lounge</title>
-
-<link rel="stylesheet" href="style.css">
-<script>
-function enterSite() {
-  document.getElementById("gate").style.display = "none";
-  localStorage.setItem("adult_ok", "1");
-}
-
-document.getElementById("leave").onclick = function () {
-  window.location.href = "https://www.google.com/";
-};
-
-if (localStorage.getItem("adult_ok") === "1") {
-  document.getElementById("gate").style.display = "none";
-}
-</script>
-
-</body>
-</html>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- 18+ AGE GATE -->
+<!-- =========================
+     18+ AGE GATE
+========================= -->
+
 <div id="gate" class="gate">
+
   <div class="card">
 
     <div class="badge">18+</div>
@@ -703,29 +27,27 @@ if (localStorage.getItem("adult_ok") === "1") {
       This website is intended for adults 18 and over.
     </p>
 
-    <button
-      id="enter"
-      type="button"
-      onclick="enterSite()">
+    <button id="enterButton" type="button">
       I am 18+ — Enter
     </button>
 
-    <button
-      id="leave"
-      class="secondary"
-      type="button">
+    <button id="leaveButton" class="secondary" type="button">
       Leave
     </button>
 
     <small>
-    Real website • No explicit content included
+      Demo website • No explicit content included
     </small>
 
   </div>
+
 </div>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
   <div class="logo">
@@ -743,10 +65,15 @@ if (localStorage.getItem("adult_ok") === "1") {
 </header>
 
 
+<!-- =========================
+     MAIN
+========================= -->
+
 <main id="home">
 
 
 <!-- HERO -->
+
 <section class="hero">
 
   <div>
@@ -773,7 +100,10 @@ if (localStorage.getItem("adult_ok") === "1") {
 </section>
 
 
-<!-- CATEGORIES -->
+<!-- =========================
+     CATEGORIES
+========================= -->
+
 <section id="categories" class="section">
 
   <h2>Categories</h2>
@@ -788,9 +118,7 @@ if (localStorage.getItem("adult_ok") === "1") {
 
   </div>
 
-
   <div class="grid">
-
 
     <article class="creator-card">
 
@@ -848,17 +176,16 @@ if (localStorage.getItem("adult_ok") === "1") {
 
     </article>
 
-
   </div>
 
 </section>
 
 
-<!-- CREATOR PROFILES -->
+<!-- =========================
+     PROFILES
+========================= -->
 
-<section
-  id="creator-one"
-  class="section profile">
+<section id="creator-one" class="section profile">
 
   <h2>Creator One</h2>
 
@@ -869,9 +196,7 @@ if (localStorage.getItem("adult_ok") === "1") {
 </section>
 
 
-<section
-  id="creator-two"
-  class="section profile">
+<section id="creator-two" class="section profile">
 
   <h2>Creator Two</h2>
 
@@ -882,9 +207,7 @@ if (localStorage.getItem("adult_ok") === "1") {
 </section>
 
 
-<section
-  id="creator-three"
-  class="section profile">
+<section id="creator-three" class="section profile">
 
   <h2>Creator Three</h2>
 
@@ -895,11 +218,11 @@ if (localStorage.getItem("adult_ok") === "1") {
 </section>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
 
-<section
-  id="about"
-  class="section about">
+<section id="about" class="section about">
 
   <h2>About</h2>
 
@@ -912,21 +235,15 @@ if (localStorage.getItem("adult_ok") === "1") {
 </section>
 
 
-<!-- LOGIN -->
+<!-- =========================
+     LOGIN DEMO
+========================= -->
 
-<section
-  id="login"
-  class="section">
+<section id="login" class="section">
 
-  <h2>
-    Member Login
-  </h2>
+  <h2>Member Login</h2>
 
-
-  <form
-    id="loginForm"
-    class="login-form">
-
+  <form id="loginForm" class="login-form">
 
     <input
       type="email"
@@ -935,7 +252,6 @@ if (localStorage.getItem("adult_ok") === "1") {
       required
     >
 
-
     <input
       type="password"
       id="loginPassword"
@@ -943,22 +259,15 @@ if (localStorage.getItem("adult_ok") === "1") {
       required
     >
 
-
     <button type="submit">
       Login
     </button>
 
-
   </form>
 
+  <div id="userPanel" style="display:none;">
 
-  <div
-    id="userPanel"
-    style="display:none;">
-
-    <h3>
-      Welcome!
-    </h3>
+    <h3>Welcome!</h3>
 
     <p>
       User ID:
@@ -973,27 +282,20 @@ if (localStorage.getItem("adult_ok") === "1") {
 
   </div>
 
-
   <p id="login-message"></p>
 
 </section>
 
 
-<!-- SIGN UP -->
+<!-- =========================
+     SIGN UP
+========================= -->
 
-<section
-  id="signup"
-  class="section">
+<section id="signup" class="section">
 
-  <h2>
-    Create Account
-  </h2>
+  <h2>Create Account</h2>
 
-
-  <form
-    id="signupForm"
-    class="login-form">
-
+  <form id="signupForm" class="login-form">
 
     <input
       type="text"
@@ -1002,14 +304,12 @@ if (localStorage.getItem("adult_ok") === "1") {
       required
     >
 
-
     <input
       type="email"
       id="signupEmail"
       placeholder="Email address"
       required
     >
-
 
     <input
       type="password"
@@ -1018,24 +318,355 @@ if (localStorage.getItem("adult_ok") === "1") {
       required
     >
 
-
     <button type="submit">
       Sign Up
     </button>
 
-
   </form>
-
 
   <p id="signup-message"></p>
 
 </section>
 
+</main>
+
+
+<!-- ==========<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Private Lounge</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     18+ AGE GATE
+========================= -->
+
+<div id="gate" class="gate">
+
+  <div class="card">
+
+    <div class="badge">18+</div>
+
+    <h1>Private Lounge</h1>
+
+    <p>
+      This website is intended for adults 18 and over.
+    </p>
+
+    <button id="enterButton" type="button">
+      I am 18+ — Enter
+    </button>
+
+    <button id="leaveButton" class="secondary" type="button">
+      Leave
+    </button>
+
+    <small>
+      Demo website • No explicit content included
+    </small>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+  <div class="logo">
+    PRIVATE<span>LOUNGE</span>
+  </div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#about">About</a>
+    <a href="#login">Login</a>
+    <a href="#signup">Sign Up</a>
+  </nav>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main id="home">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div>
+
+    <p class="eyebrow">
+      18+ COMMUNITY
+    </p>
+
+    <h2>
+      Private. Modern. Discreet.
+    </h2>
+
+    <p>
+      A clean adult-oriented landing page template.
+      Add your own lawful, consensual content and policies.
+    </p>
+
+    <a class="cta" href="#categories">
+      Explore
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<section id="categories" class="section">
+
+  <h2>Categories</h2>
+
+  <div class="search-box">
+
+    <input
+      type="search"
+      id="siteSearch"
+      placeholder="Search categories..."
+    >
+
+  </div>
+
+  <div class="grid">
+
+    <article class="creator-card">
+
+      <div class="avatar">C</div>
+
+      <h3>Creator One</h3>
+
+      <p>
+        Verified creator profile
+      </p>
+
+      <a
+        class="profile-btn"
+        href="#creator-one">
+        View Profile
+      </a>
+
+    </article>
+
+
+    <article class="creator-card">
+
+      <div class="avatar">A</div>
+
+      <h3>Creator Two</h3>
+
+      <p>
+        Verified creator profile
+      </p>
+
+      <a
+        class="profile-btn"
+        href="#creator-two">
+        View Profile
+      </a>
+
+    </article>
+
+
+    <article class="creator-card">
+
+      <div class="avatar">M</div>
+
+      <h3>Creator Three</h3>
+
+      <p>
+        Verified creator profile
+      </p>
+
+      <a
+        class="profile-btn"
+        href="#creator-three">
+        View Profile
+      </a>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PROFILES
+========================= -->
+
+<section id="creator-one" class="section profile">
+
+  <h2>Creator One</h2>
+
+  <p>
+    Verified creator profile.
+  </p>
+
+</section>
+
+
+<section id="creator-two" class="section profile">
+
+  <h2>Creator Two</h2>
+
+  <p>
+    Verified creator profile.
+  </p>
+
+</section>
+
+
+<section id="creator-three" class="section profile">
+
+  <h2>Creator Three</h2>
+
+  <p>
+    Verified creator profile.
+  </p>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about" class="section about">
+
+  <h2>About</h2>
+
+  <p>
+    This starter site is designed for lawful adult services.
+    Add age verification, privacy, terms, reporting and consent
+    policies before publishing real user content.
+  </p>
+
+</section>
+
+
+<!-- =========================
+     LOGIN DEMO
+========================= -->
+
+<section id="login" class="section">
+
+  <h2>Member Login</h2>
+
+  <form id="loginForm" class="login-form">
+
+    <input
+      type="email"
+      id="loginEmail"
+      placeholder="Email address"
+      required
+    >
+
+    <input
+      type="password"
+      id="loginPassword"
+      placeholder="Password"
+      required
+    >
+
+    <button type="submit">
+      Login
+    </button>
+
+  </form>
+
+  <div id="userPanel" style="display:none;">
+
+    <h3>Welcome!</h3>
+
+    <p>
+      User ID:
+      <strong id="userId"></strong>
+    </p>
+
+    <button
+      type="button"
+      id="logoutButton">
+      Logout
+    </button>
+
+  </div>
+
+  <p id="login-message"></p>
+
+</section>
+
+
+<!-- =========================
+     SIGN UP
+========================= -->
+
+<section id="signup" class="section">
+
+  <h2>Create Account</h2>
+
+  <form id="signupForm" class="login-form">
+
+    <input
+      type="text"
+      id="signupName"
+      placeholder="Your name"
+      required
+    >
+
+    <input
+      type="email"
+      id="signupEmail"
+      placeholder="Email address"
+      required
+    >
+
+    <input
+      type="password"
+      id="signupPassword"
+      placeholder="Create password"
+      required
+    >
+
+    <button type="submit">
+      Sign Up
+    </button>
+
+  </form>
+
+  <p id="signup-message"></p>
+
+</section>
 
 </main>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1045,357 +676,255 @@ if (localStorage.getItem("adult_ok") === "1") {
 </footer>
 
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
-/* =========================
-   SUPABASE
-========================= */
-
-/*
-  IMPORTANT:
-  Replace the two values below
-  with your own Supabase values.
-*/
-
-const SUPABASE_URL =
-  "YOUR_PROJECT_URL";
-
-const SUPABASE_KEY =
-  "YOUR_PUBLISHABLE_KEY";
-
-
-const supabaseClient =
-  supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-  );
-
-
-
-/* =========================
-   18+ AGE VERIFICATION
-========================= */
-
-function enterSite() {
+document.addEventListener("DOMContentLoaded", function () {
 
   const gate =
     document.getElementById("gate");
 
-  gate.style.display = "none";
+  const enterButton =
+    document.getElementById("enterButton");
 
-  localStorage.setItem(
-    "adult_ok",
-    "1"
-  );
-
-}
+  const leaveButton =
+    document.getElementById("leaveButton");
 
 
-const gate =
-  document.getElementById("gate");
+  /* CHECK 18+ STATUS */
+
+  if (localStorage.getItem("adult_ok") === "1") {
+
+    gate.style.display = "none";
+
+  }
 
 
-if (
-  localStorage.getItem("adult_ok") === "1"
-) {
+  /* ENTER */
 
-  gate.style.display = "none";
+  enterButton.addEventListener("click", function () {
 
-}
+    localStorage.setItem("adult_ok", "1");
 
+    gate.style.display = "none";
 
-document
-  .getElementById("leave")
-  .addEventListener(
-    "click",
-    function () {
-
-      window.location.href =
-        "https://www.google.com/";
-
-    }
-  );
+  });
 
 
+  /* LEAVE */
 
-/* =========================
-   SEARCH
-========================= */
+  leaveButton.addEventListener("click", function () {
 
-document
-  .getElementById("siteSearch")
-  .addEventListener(
-    "input",
-    function () {
+    window.location.href = "https://www.google.com/";
 
-      const query =
-        this.value.toLowerCase();
+  });
 
 
-      const cards =
-        document.querySelectorAll(
-          "#categories .grid article"
-        );
+  /* SEARCH */
+
+  const searchInput =
+    document.getElementById("siteSearch");
 
 
-      cards.forEach(
-        function (card) {
+  searchInput.addEventListener("input", function () {
 
-          const text =
-            card.textContent
-              .toLowerCase();
+    const query =
+      searchInput.value.toLowerCase();
 
 
-          if (
-            text.includes(query)
-          ) {
-
-            card.style.display = "";
-
-          } else {
-
-            card.style.display = "none";
-
-          }
-
-        }
+    const cards =
+      document.querySelectorAll(
+        "#categories .grid article"
       );
 
-    }
-  );
+
+    cards.forEach(function (card) {
+
+      const text =
+        card.textContent.toLowerCase();
 
 
+      if (text.includes(query)) {
 
-/* =========================
-   REAL LOGIN
-========================= */
+        card.style.display = "";
 
-document
-  .getElementById("loginForm")
-  .addEventListener(
-    "submit",
-    async function (event) {
+      } else {
 
-      event.preventDefault();
-
-
-      const email =
-        document.getElementById(
-          "loginEmail"
-        ).value;
-
-
-      const password =
-        document.getElementById(
-          "loginPassword"
-        ).value;
-
-
-      const {
-        data,
-        error
-      } =
-        await supabaseClient.auth
-          .signInWithPassword({
-
-            email: email,
-
-            password: password
-
-          });
-
-
-      if (error) {
-
-        document.getElementById(
-          "login-message"
-        ).textContent =
-          error.message;
-
-        return;
+        card.style.display = "none";
 
       }
 
+    });
 
-      document.getElementById(
-        "login-message"
-      ).textContent =
-        "Login successful!";
+  });
 
 
-      document.getElementById(
-        "userId"
-      ).textContent =
-        data.user.id;
+  /* DEMO LOGIN */
+
+  const loginForm =
+    document.getElementById("loginForm");
+
+  const userPanel =
+    document.getElementById("userPanel");
+
+  const userId =
+    document.getElementById("userId");
+
+  const loginMessage =
+    document.getElementById("login-message");
 
 
-      document.getElementById(
-        "loginForm"
-      ).style.display =
-        "none";
+  loginForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const email =
+      document.getElementById("loginEmail").value;
 
 
-      document.getElementById(
-        "userPanel"
-      ).style.display =
-        "block";
-
-    }
-  );
+    const demoUserId =
+      "USER-" +
+      Math.floor(
+        100000 + Math.random() * 900000
+      );
 
 
+    loginForm.style.display = "none";
 
-/* =========================
-   REAL SIGN UP
-========================= */
+    userPanel.style.display = "block";
 
-document
-  .getElementById("signupForm")
-  .addEventListener(
-    "submit",
-    async function (event) {
+    userId.textContent = demoUserId;
+
+    loginMessage.textContent =
+      "Login successful for " + email;
+
+  });
+
+
+  /* LOGOUT */
+
+  document
+    .getElementById("logoutButton")
+    .addEventListener("click", function () {
+
+      loginForm.style.display = "grid";
+
+      userPanel.style.display = "none";
+
+      document.getElementById("loginEmail").value = "";
+
+      document.getElementById("loginPassword").value = "";
+
+      loginMessage.textContent = "";
+
+    });
+
+
+  /* SIGN UP DEMO */
+
+  document
+    .getElementById("signupForm")
+    .addEventListener("submit", function (event) {
 
       event.preventDefault();
 
+      document.getElementById("signup-message").textContent =
+        "Account form submitted successfully.";
 
-      const name =
-        document.getElementById(
-          "signupName"
-        ).value;
+    });
 
-
-      const email =
-        document.getElementById(
-          "signupEmail"
-        ).value;
-
-
-      const password =
-        document.getElementById(
-          "signupPassword"
-        ).value;
-
-
-      const {
-        error
-      } =
-        await supabaseClient.auth
-          .signUp({
-
-            email: email,
-
-            password: password,
-
-            options: {
-
-              data: {
-
-                name: name
-
-              }
-
-            }
-
-          });
-
-
-      if (error) {
-
-        document.getElementById(
-          "signup-message"
-        ).textContent =
-          error.message;
-
-        return;
-
-      }
-
-
-      document.getElementById(
-        "signup-message"
-      ).textContent =
-        "Account created! Please verify your email.";
-
-    }
-  );
-
-
-
-/* =========================
-   LOGOUT
-========================= */
-
-document
-  .getElementById("logoutButton")
-  .addEventListener(
-    "click",
-    async function () {
-
-
-      await supabaseClient.auth
-        .signOut();
-
-
-      document.getElementById(
-        "loginForm"
-      ).style.display =
-        "grid";
-
-
-      document.getElementById(
-        "userPanel"
-      ).style.display =
-        "none";
-
-
-      document.getElementById(
-        "loginEmail"
-      ).value = "";
-
-
-      document.getElementById(
-        "loginPassword"
-      ).value = "";
-
-
-      document.getElementById(
-        "login-message"
-      ).textContent = "";
-
-    }
-  );
+});
 
 </script>
 
 </body>
-</html>play =
-        "grid
+</html>===============
+     FOOTER
+========================= -->
 
-      document.getElementById(
-        "userPanel"
-      ).style.display =
-        "none";
+<footer>
 
+  © 2026 Private Lounge •
+  18+ • Privacy • Terms
 
-      document.getElementById(
-        "loginEmail"
-      ).value = "";
+</footer>
 
 
-      document.getElementById(
-        "loginPassword"
-      ).value = "";
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const gate =
+    document.getElementById("gate");
+
+  const enterButton =
+    document.getElementById("enterButton");
+
+  const leaveButton =
+    document.getElementById("leaveButton");
 
 
-      document.getElementById(
-        "login-message"
-      ).textContent = "";
+  /* CHECK 18+ STATUS */
 
-    }
-  );
+  if (localStorage.getItem("adult_ok") === "1") {
 
-</script>
+    gate.style.display = "none";
 
-</body>
-    </html>
+  }
+
+
+  /* ENTER */
+
+  enterButton.addEventListener("click", function () {
+
+    localStorage.setItem("adult_ok", "1");
+
+    gate.style.display = "none";
+
+  });
+
+
+  /* LEAVE */
+
+  leaveButton.addEventListener("click", function () {
+
+    window.location.href = "https://www.google.com/";
+
+  });
+
+
+  /* SEARCH */
+
+  const searchInput =
+    document.getElementById("siteSearch");
+
+
+  searchInput.addEventListener("input", function () {
+
+    const query =
+      searchInput.value.toLowerCase();
+
+
+    const cards =
+      document.querySelectorAll(
+        "#categories .grid article"
+      );
+
+
+    cards.forEach(function (card) {
+
+      const text =
+        card.textContent.toLowerCase();
+
+
+      if (text.includes(query)) {
+
+        card.style.display = "";
+
