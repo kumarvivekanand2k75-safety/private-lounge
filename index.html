@@ -253,7 +253,25 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
 
   document.getElementById("signup-message").textContent =
     
+<script>
+document.getElementById("enter").onclick = function () {
+  document.getElementById("gate").style.display = "none";
+  localStorage.setItem("adult_ok", "1");
+};
 
+document.getElementById("leave").onclick = function () {
+  window.location.href = "https://www.google.com/";
+};
+
+function searchCategories() {
+  const query = document.getElementById("siteSearch").value.toLowerCase();
+
+  document.querySelectorAll("#categories .grid article").forEach(function(card) {
+    card.style.display =
+      card.textContent.toLowerCase().includes(query) ? "" : "none";
+  });
+}
+</script>
 </body>
 </html>
   update website login and categories 
