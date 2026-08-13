@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Private Lounge</title>
+  <title>Construction Safety Pro</title>
 
   <style>
     * {
@@ -21,8 +21,12 @@
     header {
       background: #111827;
       color: white;
-      padding: 20px;
+      padding: 30px 20px;
       text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
     }
 
     .container {
@@ -31,65 +35,37 @@
       padding: 20px;
     }
 
-    .lounge {
+    .card {
       background: white;
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
+      margin-bottom: 20px;
     }
 
-    .lounge h1 {
-      margin-bottom: 10px;
+    .card h2 {
+      margin-bottom: 12px;
     }
 
-    .lounge p {
-      color: #666;
-      margin-bottom: 25px;
+    .card p {
+      color: #555;
+      line-height: 1.6;
     }
 
-    .login-box {
-      max-width: 400px;
-      margin: auto;
-    }
-
-    input {
-      width: 100%;
-      padding: 13px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    button {
-      width: 100%;
-      padding: 13px;
-      margin-top: 12px;
-      border: none;
-      border-radius: 8px;
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
       background: #2563eb;
       color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #1d4ed8;
-    }
-
-    #privateContent {
-      display: none;
-      margin-top: 25px;
-      padding: 20px;
-      background: #f0fdf4;
-      border-radius: 10px;
+      text-decoration: none;
+      border-radius: 8px;
     }
 
     footer {
       text-align: center;
-      margin-top: 30px;
+      padding: 25px;
       color: #777;
-      font-size: 14px;
     }
   </style>
 </head>
@@ -97,109 +73,42 @@
 <body>
 
   <header>
-    <h2>Private Lounge</h2>
-    <p>Welcome to the Private Area</p>
+    <h1>Construction Safety Pro</h1>
+    <p>Safety Awareness & Construction Management</p>
   </header>
 
-  <div class="container">
+  <main class="container">
 
-    <div class="lounge">
-
-      <h1>🔐 Private Lounge</h1>
-
+    <section class="card">
+      <h2>Welcome</h2>
       <p>
-        Please enter your login details to access the private area.
+        Welcome to Construction Safety Pro.
+        This platform provides useful information about
+        construction safety, hazard identification and
+        safe working practices.
       </p>
 
-      <div class="login-box">
+      <a href="#" class="button">Get Started</a>
+    </section>
 
-        <input
-          type="text"
-          id="username"
-          placeholder="Enter Username"
-        >
+    <section class="card">
+      <h2>Safety Topics</h2>
+      <p>
+        • Hazard Identification<br>
+        • Risk Assessment<br>
+        • PPE Safety<br>
+        • Work at Height<br>
+        • Lifting & Rigging Safety<br>
+        • Excavation Safety<br>
+        • Electrical Safety
+      </p>
+    </section>
 
-        <input
-          type="password"
-          id="password"
-          placeholder="Enter Password"
-        >
-
-        <button onclick="login()">
-          Login
-        </button>
-
-        <p id="message"></p>
-
-      </div>
-
-      <div id="privateContent">
-
-        <h2>Welcome! 🎉</h2>
-
-        <p>
-          You have successfully entered the Private Lounge.
-        </p>
-
-        <button onclick="logout()">
-          Logout
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
+  </main>
 
   <footer>
-    © 2026 Private Lounge
+    © 2026 Construction Safety Pro
   </footer>
-
-  <script>
-
-    function login() {
-
-      const username =
-        document.getElementById("username").value;
-
-      const password =
-        document.getElementById("password").value;
-
-      /*
-       * Demo login only.
-       * Do NOT use real passwords here.
-       */
-
-      if (username === "admin" && password === "1234") {
-
-        document.querySelector(".login-box").style.display = "none";
-
-        document.getElementById("privateContent").style.display = "block";
-
-        document.getElementById("message").innerText = "";
-
-      } else {
-
-        document.getElementById("message").innerText =
-          "Invalid username or password.";
-
-      }
-
-    }
-
-    function logout() {
-
-      document.querySelector(".login-box").style.display = "block";
-
-      document.getElementById("privateContent").style.display = "none";
-
-      document.getElementById("username").value = "";
-
-      document.getElementById("password").value = "";
-
-    }
-
-  </script>
 
 </body>
 </html>
