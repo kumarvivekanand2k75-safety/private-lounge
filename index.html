@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Private Lounge</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
@@ -302,8 +302,77 @@ loginForm.addEventListener("submit", function (event) {
   userIdElement.textContent = userId;
 
   loginMessage.textContent =
-    "Demo login successful.";
+  <script>
+const SUPABASE_URL = "YOUR_PROJECT_URL";
+const SUPABASE_KEY = "YOUR_PUBLISHABLE_KEY";
 
+const supabaseClient =
+  supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const loginForm = document.getElementById("loginForm");
+const signupForm = document.getElementById("signupForm");
+
+loginForm.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById("loginEmail").value;
+  const password = document.getElementById("loginPassword").value;
+
+  const { data, error } =
+    await supabaseClient.auth.signInWithPassword({
+      email,
+      password
+    });
+
+  if (error) {
+    document.getElementById("login-message").textContent =
+      error.message;
+    return;
+  }
+
+  document.getElementById("login-message").textContent =
+    "Login successful!";
+
+  document.getElementById("userId").textContent =
+    data.user.id;
+
+  loginForm.style.display = "none";
+  document.getElementById("userPanel").style.display = "block";
+});
+
+signupForm.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("signupName").value;
+  const email = document.getElementById("signupEmail").value;
+  const password = document.getElementById("signupPassword").value;
+
+  const { error } =
+    await supabaseClient.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { name: name }
+      }
+    });
+
+  if (error) {
+    document.getElementById("signup-message").textContent =
+      error.message;
+    return;
+  }
+
+  document.getElementById("signup-message").textContent =
+    "Account created! Please verify your email.";
+});
+
+async function logout() {
+  await supabaseClient.auth.signOut();
+
+  loginForm.style.display = "grid";
+  document.getElementById("userPanel").style.display = "none";
+}
+</script>
 });
 
 
