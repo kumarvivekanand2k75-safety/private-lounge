@@ -670,8 +670,23 @@ document
 <title>Private Lounge</title>
 
 <link rel="stylesheet" href="style.css">
+<script>
+function enterSite() {
+  document.getElementById("gate").style.display = "none";
+  localStorage.setItem("adult_ok", "1");
+}
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+document.getElementById("leave").onclick = function () {
+  window.location.href = "https://www.google.com/";
+};
+
+if (localStorage.getItem("adult_ok") === "1") {
+  document.getElementById("gate").style.display = "none";
+}
+</script>
+
+</body>
+</html>
 </head>
 
 <body>
@@ -703,7 +718,7 @@ document
     </button>
 
     <small>
-      Demo website • No explicit content included
+    Real website • No explicit content included
     </small>
 
   </div>
