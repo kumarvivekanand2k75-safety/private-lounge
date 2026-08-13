@@ -18,7 +18,12 @@
     <h1>Private Lounge</h1>
     <p>This website is intended for adults 18 and over.</p>
 
-    <button id="enter" type="button">I am 18+ — Enter</button>
+    <button id="enter" type="<button
+  id="enter"
+  type="button"
+  onclick="document.getElementById('gate').style.display='none'; localStorage.setItem('adult_ok','1');">
+  I am 18+ — Enter
+</button>
     <button id="leave" class="secondary" type="button">Leave</button>
 
     <small>Demo website • No explicit content included</small>
