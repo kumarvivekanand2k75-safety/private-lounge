@@ -254,14 +254,20 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
   document.getElementById("signup-message").textContent =
     
 <script>
-document.getElementById("enter").onclick = function () {
-  document.getElementById("gate").style.display = "none";
-  localStorage.setItem("adult_ok", "1");
-};
+const gate = document.getElementById("gate");
 
-document.getElementById("leave").onclick = function () {
+document.getElementById("enter").addEventListener("click", function () {
+  gate.style.display = "none";
+  localStorage.setItem("adult_ok", "1");
+});
+
+document.getElementById("leave").addEventListener("click", function () {
   window.location.href = "https://www.google.com/";
-};
+});
+
+if (localStorage.getItem("adult_ok") === "1") {
+  gate.style.display = "none";
+}
 
 function searchCategories() {
   const query = document.getElementById("siteSearch").value.toLowerCase();
@@ -274,4 +280,3 @@ function searchCategories() {
 </script>
 </body>
 </html>
-  update website login and categories 
