@@ -389,4 +389,702 @@
   <section id="creator-two" class="section">
     <h2>Creator Two</h2>
     <p>Verified creator profile.</p>
- 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Lounge</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#0b0b10;
+  color:white;
+}
+
+/* 18+ GATE */
+#gate{
+  position:fixed;
+  inset:0;
+  z-index:999999;
+  background:#0b0b10;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.card{
+  width:100%;
+  max-width:420px;
+  background:#171720;
+  border:1px solid #333342;
+  border-radius:20px;
+  padding:35px 25px;
+  text-align:center;
+}
+
+.badge{
+  width:65px;
+  height:65px;
+  margin:0 auto 20px;
+  border-radius:50%;
+  background:white;
+  color:black;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.card h1{
+  margin:10px 0;
+}
+
+.card p{
+  color:#bbb;
+  line-height:1.5;
+}
+
+button{
+  width:100%;
+  padding:15px;
+  margin-top:12px;
+  border:0;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+#enterButton{
+  background:white;
+  color:#111;
+}
+
+#leaveButton{
+  background:#30303b;
+  color:white;
+}
+
+.card small{
+  display:block;
+  margin-top:18px;
+  color:#777;
+}
+
+/* WEBSITE */
+header{
+  padding:20px 7%;
+  background:#111119;
+  border-bottom:1px solid #292934;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-weight:bold;
+  font-size:20px;
+}
+
+.logo span{
+  font-weight:normal;
+  margin-left:5px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:18px;
+}
+
+.hero{
+  min-height:500px;
+  padding:80px 8%;
+  display:flex;
+  align-items:center;
+  background:radial-gradient(
+    circle at 70% 35%,
+    #54205f,
+    #181321 35%,
+    #0b0b10 70%
+  );
+}
+
+.hero-content{
+  max-width:650px;
+}
+
+.eyebrow{
+  color:#d9a7ff;
+  letter-spacing:3px;
+}
+
+.hero h2{
+  font-size:clamp(42px,7vw,76px);
+  margin:15px 0;
+}
+
+.hero p{
+  color:#c7c7d2;
+  font-size:18px;
+  line-height:1.6;
+}
+
+.cta{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 25px;
+  border-radius:10px;
+  background:white;
+  color:black;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 8%;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(
+    auto-fit,
+    minmax(220px,1fr)
+  );
+  gap:18px;
+}
+
+.creator-card{
+  background:#15151e;
+  border:1px solid #2b2b38;
+  border-radius:16px;
+  padding:25px;
+  text-align:center;
+}
+
+.avatar{
+  width:70px;
+  height:70px;
+  margin:auto;
+  border-radius:50%;
+  background:#2a2033;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:25px;
+  font-weight:bold;
+}
+
+.profile-btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 16px;
+  border-radius:8px;
+  background:white;
+  color:black;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  border-top:1px solid #222;
+  color:#888;
+}
+
+@media(max-width:700px){
+  header{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  nav a{
+    margin:5px;
+    font-size:14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 18+ AGE GATE -->
+<div id="gate">
+
+  <div class="card">
+
+    <div class="badge">18+</div>
+
+    <h1>Private Lounge</h1>
+
+    <p>
+      This website is intended for adults 18 and over.
+    </p>
+
+    <button id="enterButton">
+      I am 18+ — Enter
+    </button>
+
+    <button id="leaveButton">
+      Leave
+    </button>
+
+    <small>
+      Demo website • No explicit content included
+    </small>
+
+  </div>
+
+</div>
+
+<header>
+
+  <div class="logo">
+    PRIVATE<span>LOUNGE</span>
+  </div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#about">About</a>
+  </nav>
+
+</header>
+
+<main id="home">
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <p class="eyebrow">
+      18+ COMMUNITY
+    </p>
+
+    <h2>
+      Private. Modern. Discreet.
+    </h2>
+
+    <p>
+      A clean adult-oriented landing page template.
+    </p>
+
+    <a class="cta" href="#categories">
+      Explore
+    </a>
+
+  </div>
+
+</section>
+
+<section id="categories" class="section">
+
+  <h2>Categories</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Lounge</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#0b0b10;
+  color:white;
+}
+
+/* 18+ GATE */
+#gate{
+  position:fixed;
+  inset:0;
+  z-index:999999;
+  background:#0b0b10;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.card{
+  width:100%;
+  max-width:420px;
+  background:#171720;
+  border:1px solid #333342;
+  border-radius:20px;
+  padding:35px 25px;
+  text-align:center;
+}
+
+.badge{
+  width:65px;
+  height:65px;
+  margin:0 auto 20px;
+  border-radius:50%;
+  background:white;
+  color:black;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.card h1{
+  margin:10px 0;
+}
+
+.card p{
+  color:#bbb;
+  line-height:1.5;
+}
+
+button{
+  width:100%;
+  padding:15px;
+  margin-top:12px;
+  border:0;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+#enterButton{
+  background:white;
+  color:#111;
+}
+
+#leaveButton{
+  background:#30303b;
+  color:white;
+}
+
+.card small{
+  display:block;
+  margin-top:18px;
+  color:#777;
+}
+
+/* WEBSITE */
+header{
+  padding:20px 7%;
+  background:#111119;
+  border-bottom:1px solid #292934;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-weight:bold;
+  font-size:20px;
+}
+
+.logo span{
+  font-weight:normal;
+  margin-left:5px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:18px;
+}
+
+.hero{
+  min-height:500px;
+  padding:80px 8%;
+  display:flex;
+  align-items:center;
+  background:radial-gradient(
+    circle at 70% 35%,
+    #54205f,
+    #181321 35%,
+    #0b0b10 70%
+  );
+}
+
+.hero-content{
+  max-width:650px;
+}
+
+.eyebrow{
+  color:#d9a7ff;
+  letter-spacing:3px;
+}
+
+.hero h2{
+  font-size:clamp(42px,7vw,76px);
+  margin:15px 0;
+}
+
+.hero p{
+  color:#c7c7d2;
+  font-size:18px;
+  line-height:1.6;
+}
+
+.cta{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 25px;
+  border-radius:10px;
+  background:white;
+  color:black;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 8%;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(
+    auto-fit,
+    minmax(220px,1fr)
+  );
+  gap:18px;
+}
+
+.creator-card{
+  background:#15151e;
+  border:1px solid #2b2b38;
+  border-radius:16px;
+  padding:25px;
+  text-align:center;
+}
+
+.avatar{
+  width:70px;
+  height:70px;
+  margin:auto;
+  border-radius:50%;
+  background:#2a2033;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:25px;
+  font-weight:bold;
+}
+
+.profile-btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 16px;
+  border-radius:8px;
+  background:white;
+  color:black;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  border-top:1px solid #222;
+  color:#888;
+}
+
+@media(max-width:700px){
+  header{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  nav a{
+    margin:5px;
+    font-size:14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 18+ AGE GATE -->
+<div id="gate">
+
+  <div class="card">
+
+    <div class="badge">18+</div>
+
+    <h1>Private Lounge</h1>
+
+    <p>
+      This website is intended for adults 18 and over.
+    </p>
+
+    <button id="enterButton">
+      I am 18+ — Enter
+    </button>
+
+    <button id="leaveButton">
+      Leave
+    </button>
+
+    <small>
+      Demo website • No explicit content included
+    </small>
+
+  </div>
+
+</div>
+
+<header>
+
+  <div class="logo">
+    PRIVATE<span>LOUNGE</span>
+  </div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#about">About</a>
+  </nav>
+
+</header>
+
+<main id="home">
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <p class="eyebrow">
+      18+ COMMUNITY
+    </p>
+
+    <h2>
+      Private. Modern. Discreet.
+    </h2>
+
+    <p>
+      A clean adult-oriented landing page template.
+    </p>
+
+    <a class="cta" href="#categories">
+      Explore
+    </a>
+
+  </div>
+
+</section>
+
+<section id="categories" class="section">
+
+  <h2>Categories</h2>
+
+  <div class="grid">
+
+    <div class="creator-card">
+      <div class="avatar">C</div>
+      <h3>Creator One</h3>
+      <p>Verified creator profile</p>
+      <a class="profile-btn" href="#creator-one">
+        View Profile
+      </a>
+    </div>
+
+    <div class="creator-card">
+      <div class="avatar">A</div>
+      <h3>Creator Two</h3>
+      <p>Verified creator profile</p>
+      <a class="profile-btn" href="#creator-two">
+        View Profile
+      </a>
+    </div>
+
+    <div class="creator-card">
+      <div class="avatar">M</div>
+      <h3>Creator Three</h3>
+      <p>Verified creator profile</p>
+      <a class="profile-btn" href="#creator-three">
+        View Profile
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="creator-one" class="section">
+  <h2>Creator One</h2>
+  <p>Verified creator profile.</p>
+</section>
+
+<section id="creator-two" class="section">
+  <h2>Creator Two</h2>
+  <p>Verified creator profile.</p>
+</section>
+
+<section id="creator-three" class="section">
+  <h2>Creator Three</h2>
+  <p>Verified creator profile.</p>
+</section>
+
+<section id="about" class="section">
+  <h2>About</h2>
+  <p>
+    This is a demo website for adults 18 and over.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Private Lounge • 18+
+</footer>
+
+<script>
+
+/* 18+ ENTER */
+document.getElementById("enterButton").onclick = function(){
+
+  localStorage.setItem("adult_ok","1");
+
+  document.getElementById("gate").style.display="none";
+
+};
+
+
+/* LEAVE */
+document.getElementById("leaveButton").onclick = function(){
+
+  window.location.href="https://www.google.com/";
+
+};
+
+
+/* CHECK AGE */
+if(localStorage.getItem("adult_ok")==="1"){
+
+  document.getElementById("gate").style.display="none";
+
+}
+
+</script>
+
+</body>
+</html>
