@@ -55,3 +55,16 @@
 .creator-card button {
   margin-top: 12px;
 }
+#gate {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: auto;
+}
+
+#gate button {
+  position: relative;
+  z-index: 100000;
+  pointer-events: auto;
+  cursor: pointer;
+}
