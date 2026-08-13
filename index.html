@@ -4,32 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Private Lounge</title>
-<link rel="stylesheet" href="style.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<link rel="stylesheet" href="style.css">
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
 
-<!-- 18+ AGE GATE -->
 <div id="gate" class="gate">
   <div class="card">
     <div class="badge">18+</div>
     <h1>Private Lounge</h1>
     <p>This website is intended for adults 18 and over.</p>
 
-    <button id="enter" type="button">
-      I am 18+ — Enter
-    </button>
-
-    <button id="leave" class="secondary" type="button">
-      Leave
-    </button>
+    <button id="enter" type="button">I am 18+ — Enter</button>
+    <button id="leave" class="secondary" type="button">Leave</button>
 
     <small>Demo website • No explicit content included</small>
   </div>
 </div>
 
-<!-- HEADER -->
 <header>
   <div class="logo">PRIVATE<span>LOUNGE</span></div>
 
@@ -44,25 +39,19 @@
 
 <main id="home">
 
-<!-- HERO -->
 <section class="hero">
   <div>
     <p class="eyebrow">18+ COMMUNITY</p>
-
     <h2>Private. Modern. Discreet.</h2>
-
     <p>
       A clean adult-oriented landing page template.
       Add your own lawful, consensual content and policies.
     </p>
-
     <a class="cta" href="#categories">Explore</a>
   </div>
 </section>
 
-<!-- CATEGORIES -->
 <section id="categories" class="section">
-
   <h2>Categories</h2>
 
   <div class="search-box">
@@ -79,33 +68,26 @@
       <div class="avatar">C</div>
       <h3>Creator One</h3>
       <p>Verified creator profile</p>
-      <a class="profile-btn" href="#creator-one">
-        View Profile
-      </a>
+      <a class="profile-btn" href="#creator-one">View Profile</a>
     </article>
 
     <article class="creator-card">
       <div class="avatar">A</div>
       <h3>Creator Two</h3>
       <p>Verified creator profile</p>
-      <a class="profile-btn" href="#creator-two">
-        View Profile
-      </a>
+      <a class="profile-btn" href="#creator-two">View Profile</a>
     </article>
 
     <article class="creator-card">
       <div class="avatar">M</div>
       <h3>Creator Three</h3>
       <p>Verified creator profile</p>
-      <a class="profile-btn" href="#creator-three">
-        View Profile
-      </a>
+      <a class="profile-btn" href="#creator-three">View Profile</a>
     </article>
 
   </div>
 </section>
 
-<!-- PROFILES -->
 <section id="creator-one" class="section profile">
   <h2>Creator One</h2>
   <p>Verified creator profile.</p>
@@ -121,10 +103,8 @@
   <p>Verified creator profile.</p>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="section about">
   <h2>About</h2>
-
   <p>
     This starter site is designed for lawful adult services.
     Add age verification, privacy, terms, reporting and consent
@@ -132,9 +112,7 @@
   </p>
 </section>
 
-<!-- LOGIN -->
 <section id="login" class="section">
-
   <h2>Member Login</h2>
 
   <form id="loginForm" class="login-form">
@@ -153,34 +131,20 @@
       required
     >
 
-    <button type="submit">
-      Login
-    </button>
+    <button type="submit">Login</button>
 
   </form>
 
   <div id="userPanel" style="display:none;">
-
     <h3>Welcome!</h3>
-
-    <p>
-      Demo User ID:
-      <strong id="userId"></strong>
-    </p>
-
-    <button type="button" id="logoutButton">
-      Logout
-    </button>
-
+    <p>User ID: <strong id="userId"></strong></p>
+    <button type="button" id="logoutButton">Logout</button>
   </div>
 
   <p id="login-message"></p>
-
 </section>
 
-<!-- SIGN UP -->
 <section id="signup" class="section">
-
   <h2>Create Account</h2>
 
   <form id="signupForm" class="login-form">
@@ -206,198 +170,79 @@
       required
     >
 
-    <button type="submit">
-      Sign Up
-    </button>
+    <button type="submit">Sign Up</button>
 
   </form>
 
   <p id="signup-message"></p>
-
 </section>
 
 </main>
 
-<!-- FOOTER -->
 <footer>
   © 2026 Private Lounge • 18+ • Privacy • Terms
 </footer>
 
+<script>
 
-<script>const SUPABASE_URL = "YOUR_PROJECT_URL";
+/* SUPABASE */
+
+const SUPABASE_URL = "YOUR_PROJECT_URL";
 const SUPABASE_KEY = "YOUR_PUBLISHABLE_KEY";
-</script>
-</body>
-</html>
+
 const supabaseClient = supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
 
-/* =========================
-   18+ AGE VERIFICATION
-========================= */
+
+/* 18+ AGE GATE */
 
 const gate = document.getElementById("gate");
-const enterButton = document.getElementById("enter");
-const leaveButton = document.getElementById("leave");
+
+document.getElementById("enter").addEventListener("click", function () {
+  localStorage.setItem("adult_ok", "1");
+  gate.style.display = "none";
+});
+
+document.getElementById("leave").addEventListener("click", function () {
+  window.location.href = "https://www.google.com/";
+});
 
 if (localStorage.getItem("adult_ok") === "1") {
   gate.style.display = "none";
 }
 
-enterButton.addEventListener("click", function () {
-  localStorage.setItem("adult_ok", "1");
-  gate.style.display = "none";
-});
 
-leaveButton.addEventListener("click", function () {
-  window.location.href = "https://www.google.com/";
-});
+/* SEARCH */
 
+document.getElementById("siteSearch").addEventListener("input", function () {
 
-/* =========================
-   SEARCH
-========================= */
+  const query = this.value.toLowerCase();
 
-const searchInput = document.getElementById("siteSearch");
-
-searchInput.addEventListener("input", function () {
-
-  const query = searchInput.value.toLowerCase();
-
-  const cards = document.querySelectorAll(
-    "#categories .grid article"
-  );
-
-  cards.forEach(function (card) {
+  document.querySelectorAll("#categories .grid article").forEach(function(card) {
 
     const text = card.textContent.toLowerCase();
 
-    if (text.includes(query)) {
-      card.style.display = "";
-    } else {
-      card.style.display = "none";
-    }
+    card.style.display =
+      text.includes(query) ? "" : "none";
 
   });
 
 });
 
 
-/* =========================
-Real LOGIN
-========================= */
+/* REAL LOGIN */
 
-const loginForm = document.getElementById("loginForm");
-const userPanel = document.getElementById("userPanel");
-const userIdElement = document.getElementById("userId");
-const loginMessage = document.getElementById("login-message");
-const logoutButton = document.getElementById("logoutButton");
+document.getElementById("loginForm").addEventListener("submit", async function(e) {
 
-loginForm.addEventListener("submit", function (event) {
-
-  event.preventDefault();
-
-  const userId =
-    "USER-" +
-    Math.floor(100000 + Math.random() * 900000);
-
-  loginForm.style.display = "none";
-
-  userPanel.style.display = "block";
-
-  userIdElement.textContent = userId;
-
-  loginMessage.textContent =
-  <script>
-const SUPABASE_URL = "YOUR_PROJECT_URL";
-const SUPABASE_KEY = "YOUR_PUBLISHABLE_KEY";
-
-const supabaseClient =
-  supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-const loginForm = document.getElementById("loginForm");
-const signupForm = document.getElementById("signupForm");
-
-loginForm.addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  const email = document.getElementById("loginEmail").value;
-  const password = document.getElementById("loginPassword").value;
+  const email =
+    document.getElementById("loginEmail").value;
 
-  const { data, error } =
-    await supabaseClient.auth.signInWithPassword({
-      email,
-      password
-    });
-
-  if (error) {
-    document.getElementById("login-message").textContent =
-      error.message;
-    return;
-  }
-
-  document.getElementById("login-message").textContent =
-    "Login successful!";
-
-  document.getElementById("userId").textContent =
-    data.user.id;
-
-  loginForm.style.display = "none";
-  document.getElementById("userPanel").style.display = "block";
-});
-
-signupForm.addEventListener("submit", async function(e) {
-  e.preventDefault();
-
-  const name = document.getElementById("signupName").value;
-  const email = document.getElementById("signupEmail").value;
-  const password = document.getElementById("signupPassword").value;
-
-  const { error } =
-    await supabaseClient.auth.signUp({
-      email,
-      password,
-      options: {
-        data: { name: name }
-      }
-    });
-
-  if (error) {
-    document.getElementById("signup-message").textContent =
-      error.message;
-    return;
-  }
-
-  document.getElementById("signup-message").textContent =
-    "Account created! Please verify your email.";
-});
-
-async function logout() {
-  await supabaseClient.auth.signOut();
-
-  loginForm.style.display = "grid";
-  document.getElementById("userPanel").style.display = "none";
-}
-</script>
-});
-<script>
-  const SUPABASE_URL =qghuuwyadekmglxyywyf
-const SUPABASE_KEY =sb_publishable_9pMaBoqDzN2Fq8fTGwC5jA_lKZ046kC
-const supabaseClient = supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
-
-const loginForm = document.getElementById("loginForm");
-const signupForm = document.getElementById("signupForm");
-
-loginForm.addEventListener("submit", async function(e) {
-  e.preventDefault();
-
-  const email = document.getElementById("loginEmail").value;
-  const password = document.getElementById("loginPassword").value;
+  const password =
+    document.getElementById("loginPassword").value;
 
   const { data, error } =
     await supabaseClient.auth.signInWithPassword({
@@ -406,8 +251,10 @@ loginForm.addEventListener("submit", async function(e) {
     });
 
   if (error) {
+
     document.getElementById("login-message").textContent =
       error.message;
+
     return;
   }
 
@@ -417,44 +264,75 @@ loginForm.addEventListener("submit", async function(e) {
   document.getElementById("userId").textContent =
     data.user.id;
 
-  loginForm.style.display = "none";
+  document.getElementById("loginForm").style.display = "none";
+
   document.getElementById("userPanel").style.display = "block";
+
 });
 
-signupForm.addEventListener("submit", async function(e) {
+
+/* REAL SIGN UP */
+
+document.getElementById("signupForm").addEventListener("submit", async function(e) {
+
   e.preventDefault();
 
-  const email = document.getElementById("signupEmail").value;
-  const password = document.getElementById("signupPassword").value;
-  const name = document.getElementById("signupName").value;
+  const name =
+    document.getElementById("signupName").value;
+
+  const email =
+    document.getElementById("signupEmail").value;
+
+  const password =
+    document.getElementById("signupPassword").value;
 
   const { error } =
     await supabaseClient.auth.signUp({
+
       email: email,
+
       password: password,
+
       options: {
         data: {
           name: name
         }
       }
+
     });
 
   if (error) {
+
     document.getElementById("signup-message").textContent =
       error.message;
+
     return;
   }
 
   document.getElementById("signup-message").textContent =
     "Account created! Please verify your email.";
+
 });
 
-async function logout() {
+
+/* LOGOUT */
+
+document.getElementById("logoutButton").addEventListener("click", async function () {
+
   await supabaseClient.auth.signOut();
 
-  loginForm.style.display = "grid";
+  document.getElementById("loginForm").style.display = "grid";
+
   document.getElementById("userPanel").style.display = "none";
-}
+
+  document.getElementById("loginEmail").value = "";
+
+  document.getElementById("loginPassword").value = "";
+
+  document.getElementById("login-message").textContent = "";
+
+});
+
 </script>
 
 </body>
